@@ -6,19 +6,14 @@ https://colab.research.google.com/drive/1RfsVHZLf85nNse9gT8ZZyhgCwhRFovwg?usp=sh
 """
 
 import pandas as pd
-import pandas as pd
 import matplotlib.pyplot as plt
 import plotly.express as px
-import pandas as pd
-import matplotlib.pyplot as plt
-from datetime import datetime, timedelta
-import pandas as pd
-import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
 from statsmodels.stats.proportion import proportions_ztest
+import numpy as np
 from decimal import Decimal
 
-df = pd.read_csv('/content/risk_case_study_data_2024-03-13T16_57_16.669322Z.csv')
+df = pd.read_csv('/files/risk_case_study_data_2024-03-13T16_57_16.669322Z.csv')
 
 # @title Main KPIs
 
@@ -162,8 +157,6 @@ diff_country_dispute_false = df[(df['ip_country'] != df['billing_address_country
 print(f"Total amount of disputed transactions with ip_country different from billing_address_country: {diff_country_dispute_true:.2f}")
 print(f"Total amount of non-disputed transactions with ip_country different from billing_address_country: {diff_country_dispute_false:.2f}")
 
-from statsmodels.stats.proportion import proportions_ztest
-
 # Number of transactions with ip_country != billing_address_country
 success_a = int(diff_country_dispute_true)
 success_b = int(diff_country_dispute_false)
@@ -194,8 +187,6 @@ percent_vpn_dispute_false = (vpn_dispute_false / total_dispute_false) * 100
 print(f"Percentage of transactions with vpn = True and is_dispute = True: {percent_vpn_dispute_true:.2f}%")
 print(f"Percentage of transactions with vpn = True and is_dispute = False: {percent_vpn_dispute_false:.2f}%")
 
-import numpy as np
-from statsmodels.stats.proportion import proportions_ztest
 
 # Number of events (transactions with vpn = True)
 successes = [vpn_dispute_true, vpn_dispute_false]
