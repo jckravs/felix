@@ -1,6 +1,7 @@
 # Félix Risk Case Study
 
 This repository contains the analysis and visualization of transaction data for a risk case study. The goal is to identify patterns and KPIs (Key Performance Indicators) that can help detect fraudulent transactions and other risk factors.
+The repository is not in a modular form due to it's analytical proposal only.
 
 ## Files in the Repository
 
